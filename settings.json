@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // faz o VS Code tratar *.css como PostCSS (suporta @tailwind/@apply)
+  "files.associations": {
+    "*.css": "postcss"
+  },
+
+  // usa o tailwindcss-intellisense para validar as diretivas
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+
+  // extensões Tailwind
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "typescriptreact": "javascript"
+  }
+}
