@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
 
 const heading = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" });
