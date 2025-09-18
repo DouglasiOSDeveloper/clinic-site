@@ -3,9 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Variáveis do projeto (sua paleta) ===
-   #fbf4eb, #3f3018, #a79b8f, #8c8474, #897c74
-*/
+/* === Variáveis do projeto (paleta) === */
 :root {
   --radius: 0.625rem;
 
@@ -29,7 +27,7 @@
   --color-ring: color-mix(in oklab, #8c8474 55%, white);
 }
 
-/* (opcional) modo dark placeholder */
+/* opcional: modo dark (placeholder) */
 .dark {
   --color-bg: oklch(0.145 0 0);
   --color-fg: oklch(0.985 0 0);
@@ -46,31 +44,54 @@
   --color-ring: oklch(0.556 0 0);
 }
 
-/* === Camada base (sem utilitários “semânticos” do shadcn) === */
+/* === Base (sem utilitários semânticos) === */
 @layer base {
   * {
     border-color: var(--color-border);
     outline-color: color-mix(in oklab, var(--color-ring) 100%, transparent);
   }
-  html, body {
-    height: 100%;
-  }
+  html, body { height: 100%; }
   body {
     background-color: var(--color-bg);
     color: var(--color-fg);
   }
 }
 
-/* === Utilidades do projeto (sem @apply de classes custom inexistentes) === */
+/* === Utilidades do projeto (CSS puro; sem @apply container/md:/arbitrary) === */
 @layer utilities {
-  .container-section { @apply container py-16 md:py-20; }
-  .section-title { @apply text-3xl md:text-4xl font-semibold tracking-tight; }
-  .section-subtitle {
-    @apply text-base md:text-lg;
-    color: var(--color-muted-fg); /* era text-neutralB */
+  .container-section {
+    padding-top: 4rem;   /* ~ py-16 */
+    padding-bottom: 4rem;
   }
+  @media (min-width: 768px) {
+    .container-section {
+      padding-top: 5rem;   /* ~ md:py-20 */
+      padding-bottom: 5rem;
+    }
+  }
+
+  .section-title {
+    font-size: 1.875rem;      /* ~ text-3xl */
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  @media (min-width: 768px) {
+    .section-title { font-size: 2.25rem; } /* ~ md:text-4xl */
+  }
+
+  .section-subtitle {
+    font-size: 1rem;          /* ~ text-base */
+    color: var(--color-muted-fg);
+  }
+  @media (min-width: 768px) {
+    .section-subtitle { font-size: 1.125rem; } /* ~ md:text-lg */
+  }
+
   .card {
-    @apply rounded-2xl bg-white/70 backdrop-blur shadow-[0_6px_24px_rgba(0,0,0,0.08)] border;
-    border-color: var(--color-border); /* em vez de border-neutralA/30 */
+    border-radius: 1rem;      /* ~ rounded-2xl */
+    background: rgba(255,255,255,0.7);  /* ~ bg-white/70 */
+    backdrop-filter: blur(8px);         /* ~ backdrop-blur */
+    box-shadow: 0 6px 24px rgba(0,0,0,.08); /* substitui shadow-[...] */
+    border: 1px solid var(--color-border);
   }
 }
