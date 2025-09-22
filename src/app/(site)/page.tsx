@@ -10,7 +10,6 @@ import Hero from "@/components/sections/Hero";
 export default function HomePage() {
   return (
     <>
-      <Header />
       <Hero />
       {/* <Services /> <Benefits /> <Cases /> <Team /> <Testimonials /> <FAQ /> <InstagramFeed /> <Contact /> <Location /> */}
     </>
