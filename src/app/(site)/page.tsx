@@ -1,17 +1,22 @@
 // src/app/(site)/page.tsx
 
-// 👇 força renderização dinâmica e evita o bug do clientReferenceManifest
 export const dynamic = 'force-static';
 
-import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
-// import as demais seções assim que criarmos
+import Benefits from "@/components/sections/Benefits";
+import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
+import Location from "@/components/sections/Location";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      {/* <Services /> <Benefits /> <Cases /> <Team /> <Testimonials /> <FAQ /> <InstagramFeed /> <Contact /> <Location /> */}
+      {/* Serviços e outras seções virão em seguida */}
+      <Benefits />
+      <FAQ />
+      <Contact />
+      <Location />
     </>
   );
 }
