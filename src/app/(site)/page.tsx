@@ -3,6 +3,7 @@
 export const dynamic = 'force-static';
 
 import Hero from "@/components/sections/Hero";
+import Services from "@/components/sections/Services";
 import Benefits from "@/components/sections/Benefits";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
@@ -12,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      {/* Serviços e outras seções virão em seguida */}
+      <Services />
       <Benefits />
       <FAQ />
       <Contact />
