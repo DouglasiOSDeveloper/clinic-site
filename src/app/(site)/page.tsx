@@ -10,6 +10,7 @@ import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Location from "@/components/sections/Location";
 import Team from "@/components/sections/Team";
+import Testimonials from "@/components/sections/Testimonials";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Benefits />
       <Cases />
       <Team />
+      <Testimonials />
       <FAQ />
       <Contact />
       <Location />
