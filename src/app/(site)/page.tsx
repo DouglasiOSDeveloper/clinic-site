@@ -5,6 +5,7 @@ export const dynamic = 'force-static';
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Benefits from "@/components/sections/Benefits";
+import Cases from "@/components/sections/Cases";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Location from "@/components/sections/Location";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Benefits />
+      <Cases />
       <FAQ />
       <Contact />
       <Location />
