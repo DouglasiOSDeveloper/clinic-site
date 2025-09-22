@@ -8,12 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { buildWhatsAppLink } from "@/lib/utils";
 
-const CATEGORIES: Array<Procedure["categoria"] | "Todos"> = [
-  "Todos",
-  "Facial",
-  "Corporal",
-  "Capilar",
-];
+const CATEGORIES = ["Todos", "Facial", "Corporal", "Capilar"] as const;
+type Tab = typeof CATEGORIES[number];
 
 function Card({ p }: { p: Procedure }) {
   const wa = buildWhatsAppLink(
@@ -75,7 +71,7 @@ function Card({ p }: { p: Procedure }) {
 
 export default function Services() {
   const [query, setQuery] = useState("");
-  const [tab, setTab] = useState<(typeof CATEGORIES)[number]>("Todos");
+  const [tab, setTab] = useState<Tab>("Todos");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -108,7 +104,7 @@ export default function Services() {
         </div>
       </div>
 
-      <Tabs value={tab} onValueChange={(v) => setTab(v as any)} className="w-full">
+      <Tabs value={tab} onValueChange={(v: string) => setTab(v as Tab)} className="w-full">
         <TabsList className="flex flex-wrap gap-2">
           {CATEGORIES.map((c) => (
             <TabsTrigger key={c} value={c} className="px-3">
