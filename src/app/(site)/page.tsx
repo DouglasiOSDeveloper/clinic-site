@@ -9,6 +9,7 @@ import Cases from "@/components/sections/Cases";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Location from "@/components/sections/Location";
+import Team from "@/components/sections/Team";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Services />
       <Benefits />
       <Cases />
+      <Team />
       <FAQ />
       <Contact />
       <Location />
