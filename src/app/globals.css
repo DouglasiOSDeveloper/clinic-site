@@ -55,6 +55,12 @@
     background-color: var(--color-bg);
     color: var(--color-fg);
   }
+
+  /* 🔎 Acessibilidade: foco visível */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
 }
 
 /* === Utilidades do projeto (CSS puro; sem @apply container/md:/arbitrary) === */
