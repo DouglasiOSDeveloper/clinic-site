@@ -11,6 +11,7 @@ import Contact from "@/components/sections/Contact";
 import Location from "@/components/sections/Location";
 import Team from "@/components/sections/Team";
 import Testimonials from "@/components/sections/Testimonials";
+import InstagramFeed from "@/components/sections/InstagramFeed";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Team />
       <Testimonials />
       <FAQ />
+      <InstagramFeed />
       <Contact />
       <Location />
     </>
