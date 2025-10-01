@@ -56,6 +56,7 @@
     color: var(--color-fg);
   }
 
+
   /* 🔎 Acessibilidade: foco visível */
   :focus-visible {
     outline: 2px solid var(--color-ring);
@@ -65,9 +66,23 @@
 
 /* === Utilidades do projeto (CSS puro; sem @apply container/md:/arbitrary) === */
 @layer utilities {
+
+  /* Scrim/overlay para legibilidade do texto sobre o vídeo */
+.hero-scrim {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.45) 0%,
+      rgba(0,0,0,0.35) 40%,
+      rgba(0,0,0,0.30) 60%,
+      rgba(0,0,0,0.20) 100%
+    );
+}
+
   .container-section {
     padding-top: 4rem;   /* ~ py-16 */
     padding-bottom: 4rem;
+    scroll-margin-top: 80px; /* 👈 evita que o header tape o título ao clicar no menu */
   }
   @media (min-width: 768px) {
     .container-section {
@@ -100,4 +115,5 @@
     box-shadow: 0 6px 24px rgba(0,0,0,.08); /* substitui shadow-[...] */
     border: 1px solid var(--color-border);
   }
+  .card:hover { box-shadow: 0 12px 30px rgba(0,0,0,.10); }
 }
