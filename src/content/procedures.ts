@@ -1,7 +1,11 @@
+// content/procedures.ts
+
+export type Category = "Facial" | "Corporal" | "Capilar";
+
 export type Procedure = {
   slug: string;
   nome: string;
-  categoria: "Facial" | "Corporal" | "Capilar";
+  categorias: Category[]; 
   resumo: string;
   beneficios: string[];
   imagem: string; // caminho em /public/images/... ou URL
@@ -11,9 +15,20 @@ export type Procedure = {
 
 export const procedures: Procedure[] = [
   {
+    slug: "preenchimento-facial",
+    nome: "Preenchimento Facial com Ácido Hialurônico",
+    categorias: ["Facial"],
+    resumo: "Volume e contorno para realçar traços naturais.",
+    beneficios: [
+      "Realça traços naturais",
+      "Resultados duradouros",
+    ],
+    imagem: "/images/proc-preenchimento.jpg",
+  },
+  {
     slug: "harmonizacao-facial",
     nome: "Harmonização Facial",
-    categoria: "Facial",
+    categorias: ["Facial"],
     resumo: "Equilíbrio e definição com técnicas seguras e personalizadas.",
     beneficios: [
       "Resultados naturais",
@@ -25,7 +40,7 @@ export const procedures: Procedure[] = [
   {
     slug: "skinbooster",
     nome: "Skinbooster",
-    categoria: "Facial",
+    categorias: ["Facial"],
     resumo: "Hidratação injetável para viço e firmeza da pele.",
     beneficios: [
       "Hidratação profunda",
@@ -37,24 +52,18 @@ export const procedures: Procedure[] = [
   {
     slug: "bumbum-up",
     nome: "Bumbum Uplift",
-    categoria: "Corporal",
+    categorias: ["Corporal"],
     resumo: "Técnicas para sustentação e contorno da região glútea.",
     beneficios: ["Efeito lifting", "Contorno valorizado"],
     imagem: "/images/proc-bumbum.jpg",
   },
-  {
-    slug: "capilar-bioestimulador",
-    nome: "Bioestimulador Capilar",
-    categoria: "Capilar",
-    resumo: "Estimula crescimento e fortalecimento dos fios.",
-    beneficios: ["Redução da queda", "Fortalecimento do fio"],
-    imagem: "/images/proc-capilar.jpg",
-  },
+
   {
     slug: "limpeza-pele-premium",
     nome: "Limpeza de Pele Premium",
-    categoria: "Facial",
-    resumo: "Remove impurezas, oleosidade e células mortas, devolvendo viço imediato.",
+    categorias: ["Facial"],
+    resumo:
+      "Remove impurezas, oleosidade e células mortas, devolvendo viço imediato.",
     beneficios: [
       "Desobstrui os poros, prevenindo cravos e acne",
       "Devolve luminosidade à pele",
@@ -65,7 +74,7 @@ export const procedures: Procedure[] = [
   {
     slug: "microagulhamento",
     nome: "Microagulhamento",
-    categoria: "Facial",
+    categorias: ["Facial", "Corporal"], // 👈 múltiplas categorias
     resumo: "Estimula colágeno para melhora de textura e cicatrizes.",
     beneficios: [
       "Estimula a produção natural de colágeno",
@@ -77,7 +86,7 @@ export const procedures: Procedure[] = [
   {
     slug: "botox",
     nome: "Botox (Toxina Botulínica)",
-    categoria: "Facial",
+    categorias: ["Facial"],
     resumo: "Suaviza rugas e previne o envelhecimento precoce.",
     beneficios: [
       "Suaviza linhas de expressão",
@@ -89,8 +98,9 @@ export const procedures: Procedure[] = [
   {
     slug: "bioestimuladores-colageno",
     nome: "Bioestimuladores de Colágeno (Ellansé, Sculptra, Radiesse)",
-    categoria: "Facial",
-    resumo: "Estimulam colágeno gradual e duradouro, com resultados progressivos.",
+    categorias: ["Facial", "Corporal"],
+    resumo:
+      "Estimulam colágeno gradual e duradouro, com resultados progressivos.",
     beneficios: [
       "Melhoram firmeza e contorno da pele",
       "Qualidade da pele renovada",
@@ -101,8 +111,9 @@ export const procedures: Procedure[] = [
   {
     slug: "ultrassom-microfocado",
     nome: "Ultrassom Microfocado",
-    categoria: "Facial",
-    resumo: "Efeito lifting sem cortes ou cirurgia, estimulando colágeno profundo.",
+    categorias: ["Facial", "Corporal"],
+    resumo:
+      "Efeito lifting sem cortes ou cirurgia, estimulando colágeno profundo.",
     beneficios: [
       "Efeito lifting não cirúrgico",
       "Trata flacidez em rosto, pescoço e corpo",
@@ -113,7 +124,7 @@ export const procedures: Procedure[] = [
   {
     slug: "clareamento-manchas-cicatrizes",
     nome: "Clareamento de Manchas e Cicatrizes",
-    categoria: "Facial",
+    categorias: ["Facial", "Corporal"],
     resumo: "Uniformiza o tom e suaviza manchas e cicatrizes.",
     beneficios: [
       "Uniformiza tom da pele",
@@ -125,8 +136,9 @@ export const procedures: Procedure[] = [
   {
     slug: "tratamentos-flacidez",
     nome: "Tratamentos para Flacidez de Pele",
-    categoria: "Corporal",
-    resumo: "Recuperam firmeza e sustentação da pele em diferentes áreas.",
+    categorias: ["Facial", "Corporal"],
+    resumo:
+      "Recuperam firmeza e sustentação da pele em diferentes áreas.",
     beneficios: [
       "Estimulam colágeno e elastina naturalmente",
       "Indicados para rosto, pescoço, abdômen, braços e coxas",
@@ -137,8 +149,9 @@ export const procedures: Procedure[] = [
   {
     slug: "gordura-localizada",
     nome: "Gordura Localizada",
-    categoria: "Corporal",
-    resumo: "Reduz acúmulos resistentes, melhorando contorno e definição.",
+    categorias: ["Corporal"],
+    resumo:
+      "Reduz acúmulos resistentes, melhorando contorno e definição.",
     beneficios: [
       "Redução de gordura localizada",
       "Melhora do contorno corporal",
